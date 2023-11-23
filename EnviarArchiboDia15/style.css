@@ -1,0 +1,133 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(to top right, rgb(52, 153, 204), rgb(43, 140, 76));
+    margin: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .subContainer {
+        width: 75%;
+        height: 65%;
+        border-radius: 10px;
+        background-color: rgb(255,255,255);
+        .header {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: rgb(83, 83, 83);
+            border-bottom: 1px solid rgb(100, 100, 100);
+        }
+        .barraCarga {
+            height: 8px;
+            width: 0px;
+            background-color: rgb(94, 171, 52);
+        }
+        .barraCarga.active {
+            animation: carga 2s;
+            width: 100%;
+        }
+        .cargarArchivo {
+            width: 100%;
+            height: 80%;
+            border-top: 1px solid rgb(100, 100, 100);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            .fileContainer {
+                width: 120px;
+                height: 100px;
+                border: dashed 1px rgb(83, 83, 83);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .icon {
+                    position: absolute;
+                    font-size: 50px;
+                    color: rgb(100, 100, 100);
+                }
+                .carga.active {
+                    visibility: hidden;
+
+                }
+                .progres {
+                    animation: rotate 2s;
+                }
+                .check {
+                    animation: checkAnimation  1s  alternate infinite;
+                    color: rgb(94, 171, 52);
+                }
+                .file {
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+            }
+            .fileContainer.active {
+                border: none;
+                
+            }
+            .botom {
+                padding: 8px;
+                width: 140px;
+                height: 40px;
+                border: none;
+                background-color: rgb(94, 171, 52);
+                color: rgb(255,255,255);
+                border-radius: 5px;
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 2px 2px 5px 3px rgba(94, 171, 52, .5);
+                }
+            }
+            .botom.disabled {
+                cursor: not-allowed;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+@keyframes checkAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(660deg);
+    }
+}
+
+@keyframes carga {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 100%;
+    }
+}

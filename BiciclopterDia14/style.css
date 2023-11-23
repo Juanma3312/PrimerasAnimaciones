@@ -1,0 +1,220 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(75,72,65);
+    margin: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 700px;
+
+    .rotate {
+        width: 85%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        &:hover .subContainer {
+            transform: rotateX(180deg);
+        }
+
+        .subContainer {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(229, 189, 68);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            perspective: 700px;
+    
+            &:hover .imgContainerBike{
+                opacity: 0;
+                z-index: 12;
+            }
+            &:hover .imgContainerHely{
+                opacity: 1;
+                z-index: 15;
+            }
+    
+            .imgContainerBike {
+                position: absolute;
+                width: 65%;
+                height: 50%;
+                padding: 5px;
+                overflow: hidden;
+                transition-property: opacity;
+                transition-duration: 1s;
+                .img {
+                    width: 100%;
+                    height: 100%;
+                    animation: bicyAnimation .5s alternate infinite;  /*1 fallo */
+                }
+                .camino {
+                    position: absolute;
+                    right: -20px;
+                    bottom: 0px;
+                    width: 20px;
+                    height: 4px;
+                    background-color: rgb(75,72,65);
+                    z-index: 10;
+                }
+                .i2 {
+                    right: 20px;
+                    animation: move 2s infinite;
+                }
+                .i3 {
+                    right: 60px;
+                    width: 20px;
+                    animation: move 2.2s infinite linear;
+                }
+    
+                .i4 {
+                    right: 100px;
+                    animation: move 2.5s infinite linear;
+                }
+    
+                .i5 {
+                    animation: move 2.5s infinite linear;
+                }
+                .i6 {
+                    width: 30px;
+                    animation: move 2.6s infinite linear;
+                }
+                .i7 {
+                    animation: move 1.6s infinite linear;
+                }
+                .i8 {
+                    animation: move 1.8s infinite linear;
+                }
+                .i9 {
+                    animation: move 2s infinite linear;
+                }
+                .i10 {
+                    animation: move 1.9s infinite linear;
+                }
+            }
+            .imgContainerHely {
+                position: absolute;
+                width: 85%;
+                height: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                opacity: 0;
+                transform: rotateX(180deg);
+                transition-property: opacity;
+                transition-duration: 1s;
+                
+                .imgHely {
+                    animation: helyAnimation 1s alternate infinite;
+                    z-index: 15;
+                }
+                .disparo {
+                    position: absolute;
+                    width: 30px;
+                    height: 3px;
+                    right: -30px;
+                    border-radius: 2px;
+                    background-color: rgb(75,72,65);
+                }
+                .t1 {
+                    top: 15px;
+                    animation: moveHely 1s infinite;
+                }
+                .t2 {
+                    top: 30px;
+                    animation: moveHely 1.6s infinite;
+                }
+                .t3 {
+                    top: 50px;
+                    animation: moveHely 1.2s infinite;
+                }
+                .t4 {
+                    top: 70px;
+                    animation: moveHely 2s infinite;
+                }
+                .t5 {
+                    top: 90px;
+                    animation: moveHely .5s infinite;
+                }
+                .t6 {
+                    top: 8px;
+                    animation: moveHely 2s infinite;
+                }
+                .t7 {
+                    top: 15px;
+                    animation: moveHely 1.6s infinite;
+                }
+                .t8 {
+                    top: 45px;
+                    animation: moveHely 1.4s infinite;
+                }
+                .t9 {
+                    top: 22px;
+                    animation: moveHely .9s infinite;
+                }
+                .t10 {
+                    top: 85px;
+                    animation: moveHely 1.7s infinite;
+                }
+            }
+        }
+    }
+}
+
+@keyframes helyAnimation {
+    0% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(2px);
+
+    }
+}
+
+@keyframes moveHely {
+    0% {
+        right: -30px;
+    }
+    50% {
+        right: 280px;
+    }
+    100% {
+        left: -30px;
+        right: -20px;
+    }
+}
+
+@keyframes bicyAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.02);
+    }
+}
+
+@keyframes move{
+    0% {
+        right: -20px;
+
+    }
+    50% {
+        right: 280px;
+    }
+    100% {
+        left: -30px;
+        right: -20px;
+    }
+}

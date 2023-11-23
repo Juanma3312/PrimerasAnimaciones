@@ -1,0 +1,102 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(80,80,80);
+    border-radius: 10px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .subContainer {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: solid 10px rgb(50,50,50);
+        background-color: rgb(0,0,0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .svg {
+            position: absolute;
+            .circulo {
+                stroke: rgb(191, 45, 32);
+                stroke-width: 6;
+                stroke-dasharray: 830;
+                transform-origin: center center;
+                transform: rotate(-90deg);
+                stroke-linecap: round;
+                animation: rotate 5s infinite;
+            }
+        }
+        .hijo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 4px dashed rgb(184, 173, 173);
+            background-color: rgb(0, 0, 0);
+            color: rgb(255,255,255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+
+            .info {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .hora {
+                    font-size: 50px;
+                }
+                .heart {
+                    position: absolute;
+                    color: rgb(255,20,0);
+                    animation: palpitar .5s alternate infinite;
+                }
+
+                .number {
+                    margin-left: 30px; 
+                    .calorias {
+                        margin-left: 20px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+@keyframes rotate {
+    0% {
+        stroke-dashoffset: 830;
+        transform: rotate(-90deg) scaleY(1);
+    }
+    50% {
+        stroke-dashoffset: 0;
+        transform: rotate(-90deg) scaleY(1);
+    }
+    50.001% {
+        transform: rotate(-90deg) scaleY(-1);
+    }
+    100% {
+        transform: rotate(-90deg) scaleY(-1);
+        stroke-dashoffset: 830;
+    }
+    
+}
+
+@keyframes palpitar {
+    0% {
+        transform:  translate(-55px, 78px) scale(1);
+    }
+    100% {
+        transform: translate(-55px, 78px) scale(1.2);
+    }
+
+}
+

@@ -1,0 +1,131 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(rgb(170, 128, 5), rgb(197, 166, 75));
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .subContainer {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(255,255,255);
+    border-radius: 10px;
+    display: flex;
+}
+
+.container .subContainer .perfil {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    .imgContainer {
+        position: relative;
+        &:hover .lineUno {
+            transform: rotate(380deg);
+        }
+        &:hover .lineDos {
+            transform: rotate(-380deg);
+        }
+        .lineUno {
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            border: solid 1px rgb(83, 76, 56);
+            top: -6px;
+            left: -5px;
+            border-radius: 100%;
+            clip-path: inset(0px 15px 0px 0px);
+            transition: transform 2s;
+        }
+        .lineDos {
+            position: absolute;
+            width: 125px;
+            height: 126px;
+            top: -14px;
+            right: -12px;
+            border: solid 1px rgb(83, 76, 56);
+            border-radius: 100%;
+            clip-path: inset(0px 0px 0px 5px);
+            transition: transform 2s;
+        }
+    }
+
+        .img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+    .nameContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .name {
+            font-size: 25px;
+            color: rgb(83, 76, 56);
+            
+        }
+    }
+
+    .buttoms {
+        display: flex; 
+        flex-direction: column;
+        gap: 10px;
+        .btn {
+            width: 120px;
+            padding: 6px;
+            border-radius: 12px;
+            border: solid 1px;
+            cursor: pointer;
+            background-color: rgb(255,255,255);
+            transition: background .5s;
+
+            &:hover  {
+                background-color: rgb(83,76,56);
+                color: rgb(255,255,255);
+
+            }
+        }
+        
+    }
+
+
+
+}
+
+.container .subContainer .info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .date {
+        background-color: rgba(202, 184, 124, 0.7);
+        height: 130px;
+        min-width: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: background .8s;
+        .number {
+            font-size: 30px;
+            color: rgb(83, 76, 56);
+        }
+
+        &:hover {
+            background-color: rgba(179, 155, 79, .7);
+            cursor: pointer;
+        }
+
+    }
+}

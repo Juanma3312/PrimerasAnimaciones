@@ -1,0 +1,165 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.padre {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+    .cortina {
+        position: absolute;
+        width: 100%;
+        transition: 1s;
+    }
+    .top {
+        top: -245px;
+        visibility: hidden;
+        .salir {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgb(236, 101, 101);
+            color: rgb(255,255,255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            transform: rotate(45deg);
+            font-weight: 900;
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(255,255,255);
+                color: rgb(236, 101, 101);
+            }
+        }
+
+        .burbuja{
+            position: absolute;
+            left: 140px;
+            top: -120px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid rgb(255,255,255);
+            overflow: hidden;
+            transition: 2s;
+            .burImg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .mover {
+            top: 110px;
+            z-index: 45;
+        }
+    }
+
+    .abajo {
+        top: 0px;
+        visibility: visible;
+        z-index: 20;
+    }
+    .bottom {
+        bottom: -225px;
+        height: 220px;
+        background-color: rgb(236, 101, 101);
+        color: rgb(255,255,255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icons {
+            position: relative;
+            top: 20px;
+            width: 250px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            font-size: 20px;
+            .containerIcons {
+                height: 50px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+                z-index: 50;
+
+                .icon {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    border: 1px solid rgb(255,255,255);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &:hover {
+                        background-color: rgb(255,255,255);
+                        color: rgb(236, 101, 101);
+                        cursor: pointer;
+                    }
+
+                }
+            }
+
+        }
+    }
+    .arriba {
+        bottom: 0px;
+    }
+    .container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 8px;
+       
+        .item {
+            transition:  .3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover .circle {
+                transform: scale(1);
+                cursor: pointer;
+                visibility: visible;
+                
+            }
+            .img {
+                width: 100%;
+                height: 100%;
+                transition: .5s; 
+                &:hover {
+                    cursor: pointer;
+                    filter: brightness(.5);
+                }
+            }
+        }
+    
+        .circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(236, 101, 101);
+            color: rgb(255,255,255);
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            transform: scale(1.8);
+            visibility: hidden;
+            transition: .3s;
+        }
+    }
+}
+
